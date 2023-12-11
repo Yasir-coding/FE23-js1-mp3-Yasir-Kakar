@@ -1,0 +1,50 @@
+body{
+  background-color:  	#665974;
+}
+#resultDiv{
+  width: 90%;
+  margin: 30px auto;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+form{
+  border-bottom: #f5decb solid 1px;
+  display: flex;
+  padding: 20px 0; 
+  justify-content: space-evenly;
+}
+
+#textInput{
+  color: #1c2b6b;
+  border: #f5decb solid 2px;
+}
+
+label{
+  color: #1c2b6b;
+}
+
+#rBDiv{
+  border-bottom: #f5decb solid 1px;
+  padding-right:3px ;
+}
+
+button{
+  background-color: #f5decb;
+  color: #1c2b6b;
+  border: none;
+  border-radius: 5%;
+}
+
+button:hover{
+  background-color: #efbfa8;
+}
+
+.boxStyle{
+  border-bottom: #f5decb solid 1px;
+  text-align: center;
+  height: 500px;
+  width: 30%;
+  box-sizing: border-box;
+}
