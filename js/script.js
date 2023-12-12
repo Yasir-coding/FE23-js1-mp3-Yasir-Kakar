@@ -69,9 +69,6 @@ function langSearch(language){
     container.innerHTML = "";
     countryObj.sort(compare);
     for(let i = 0; i<countryObj.length; i++){
-      
-      
-    
       let h1El = document.createElement("h1");
       let h2El = document.createElement("h2");
       let h3El = document.createElement("h3");
