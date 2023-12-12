@@ -39,10 +39,10 @@ function nameSearch(countryName){
     box.classList.add("boxStyle");
 
     if(countryObj[i].capital === undefined){
-      h3El.innerText = "none"
+      h3El.innerText = "none";
     }else{
     h3El.innerText = countryObj[i].capital[0];
-    }
+    };
     h1El.innerText = countryObj[i].name.official;
     h2El.innerText = countryObj[i].subregion;
     h4El.innerText = "Population: " + countryObj[i].population;
@@ -80,10 +80,10 @@ function langSearch(language){
       let box = document.createElement("div");
       box.classList.add("boxStyle");
       if(countryObj[i].capital === undefined){
-        h3El.innerText = "none"
+        h3El.innerText = "none";
       }else{
       h3El.innerText = countryObj[i].capital[0];
-      }
+      };
       h1El.innerText = countryObj[i].name.official;
       h2El.innerText = countryObj[i].subregion;
       h4El.innerText = "Population: " + countryObj[i].population;
