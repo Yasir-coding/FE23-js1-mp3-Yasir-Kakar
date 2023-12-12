@@ -27,6 +27,9 @@ function nameSearch(countryName){
   fetch(countryApi).then(result => result.json()).then(countryObj=>{
     let container = document.querySelector("#resultDiv");
     container.innerHTML = "";
+    countryObj.sort(compare);
+    for(let i = 0; i<countryObj.length;i++){
+
     let h1El = document.createElement("h1");
     let h2El = document.createElement("h2");
     let h3El = document.createElement("h3");
@@ -35,22 +38,27 @@ function nameSearch(countryName){
     let box = document.createElement("div");
     box.classList.add("boxStyle");
 
-    h1El.innerText = countryObj[0].name.official;
-    h2El.innerText = countryObj[0].subregion;
-    h3El.innerText = countryObj[0].capital[0];
-    h4El.innerText = "Population: " + countryObj[0].population;
-    imgEl.src = countryObj[0].flags.png;
+    if(countryObj[i].capital === undefined){
+      h3El.innerText = "none"
+    }else{
+    h3El.innerText = countryObj[i].capital[0];
+    }
+    h1El.innerText = countryObj[i].name.official;
+    h2El.innerText = countryObj[i].subregion;
+    h4El.innerText = "Population: " + countryObj[i].population;
+    imgEl.src = countryObj[i].flags.png;
 
     box.append(h1El,h2El,h3El,h4El,imgEl);
     container.append(box);
     container.style.height = "fit-content";
-
+    }
     }).catch(error=>{
       let errorH2 = document.createElement("h2");
       errorH2.innerText = error;
       let container = document.querySelector("#resultDiv");
       container.append(errorH2);
-    })  
+    })
+  
 }
 
 function langSearch(language){
@@ -62,6 +70,8 @@ function langSearch(language){
     countryObj.sort(compare);
     for(let i = 0; i<countryObj.length; i++){
       
+      
+    
       let h1El = document.createElement("h1");
       let h2El = document.createElement("h2");
       let h3El = document.createElement("h3");
@@ -69,12 +79,16 @@ function langSearch(language){
       let imgEl = document.createElement("img");
       let box = document.createElement("div");
       box.classList.add("boxStyle");
-
+      if(countryObj[i].capital === undefined){
+        h3El.innerText = "none"
+      }else{
+      h3El.innerText = countryObj[i].capital[0];
+      }
       h1El.innerText = countryObj[i].name.official;
       h2El.innerText = countryObj[i].subregion;
-      h3El.innerText = countryObj[i].capital[0];
       h4El.innerText = "Population: " + countryObj[i].population;
       imgEl.src = countryObj[i].flags.png;
+
         
       box.append(h1El,h2El,h3El,h4El,imgEl);
       container.append(box);
